@@ -1,14 +1,28 @@
-package org.hbrs.ooka.uebung1.entities;
+package org.hbrs.ooka.uebung1.component;
 
 /**
- * Klasse zur Repräsentation eines Produkts. Dies kann um weitere Attribute gerne erweitert werden.
+ * Klasse zur Repräsentation eines Produkts. Dieses kann um weitere Attribute gerne erweitert werden.
  */
 public class Product {
-    private int id = 0;
+    private static int nextId = 1;
+    private final int id;
     private String name;
     private double price;
 
-    public Product(int id, String name, double price) {
+    /**
+     * Creates a new product with an automatic assigned Identifier.
+     * Used to create brand-new products.
+     */
+    public Product(String name, double price) {
+        this(nextId++, name, price);
+    }
+
+    /**
+     * Creates a new product.
+     * Used to read already existing products.
+     */
+    // TODO: public auf package-private setzen
+    public Product(int id, String name, double price){
         this.id = id;
         this.name = name;
         this.price = price;
@@ -16,10 +30,6 @@ public class Product {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -51,14 +61,12 @@ public class Product {
     /**
      * Vergleich von zwei Produkten anhand des Namens und des Preises.
      * Wichtig für den Junit-Test!!
-     * @param o
-     * @return
      */
     public boolean equals(Object o) {
-        if (o instanceof Product) {
-            Product p = (Product) o;
-            return p.getName().equals(this.getName()) && p.getPrice() == this.getPrice();
-        }
-        return false;
+        if (!(o instanceof Product))
+            return false;
+
+        Product p = (Product) o;
+        return p.getName().equals(this.getName()) && p.getPrice() == this.getPrice();
     }
 }

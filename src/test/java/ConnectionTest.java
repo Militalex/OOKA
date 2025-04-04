@@ -1,16 +1,15 @@
-import org.hbrs.ooka.uebung1.DatabaseConnection;
+import org.hbrs.ooka.uebung1.component.DatabaseConnection;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hbrs.ooka.uebung1.entities.Product;
+import org.hbrs.ooka.uebung1.component.Product;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
-import java.sql.Statement;
 import java.sql.ResultSet;
 
 import static org.junit.Assert.assertEquals;
@@ -25,13 +24,12 @@ public class ConnectionTest {
         try {
             connection = databaseConnection.getConnection();
 
-            String sql = "CREATE TABLE IF NOT EXISTS products ("
-                + "id INT PRIMARY KEY AUTO_INCREMENT, "
-                + "name VARCHAR(255) NOT NULL, "
-                + "price DOUBLE NOT NULL)";
-
-            Statement stmt = connection.createStatement();
-            stmt.execute(sql);
+            connection.createStatement().execute(
+                    "CREATE TABLE IF NOT EXISTS products ("
+                    + "id INT PRIMARY KEY AUTO_INCREMENT, "
+                    + "name VARCHAR(255) NOT NULL, "
+                    + "price DOUBLE NOT NULL)"
+            );
             System.out.println("Table created successfully.");
 
         } catch (SQLException e) {
@@ -67,10 +65,9 @@ public class ConnectionTest {
 
     private List<Product> readProducts() {
         List<Product> products = new ArrayList<>();
-        String sql = "SELECT * FROM products";
 
         try {
-            PreparedStatement pstmt = this.connection.prepareStatement(sql);
+            PreparedStatement pstmt = this.connection.prepareStatement("SELECT * FROM products");
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
                 products.add(new Product(
@@ -86,11 +83,11 @@ public class ConnectionTest {
     }
 
     private Product insertProduct() {
-        String sql1 = "INSERT INTO products (name, price) VALUES (?, ?)";
         Product productTarget = new Product(1, "My Motor 1.0", 100.0);
 
         try {
-            PreparedStatement pstmt = this.connection.prepareStatement(sql1);
+            PreparedStatement pstmt = this.connection.prepareStatement(
+                    "INSERT INTO products (name, price) VALUES (?, ?)");
             pstmt.setString(1, productTarget.getName());
             pstmt.setDouble(2, productTarget.getPrice());
             pstmt.executeUpdate();
