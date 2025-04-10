@@ -1,18 +1,17 @@
 package org.hbrs.ooka.uebung1.component;
 
-import org.hbrs.ooka.uebung1.interfaces.ProductManagementInt;
+import org.hbrs.ooka.uebung1.interfaces.IProductManagement;
 import org.jetbrains.annotations.NotNull;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ProxyProductManagement implements ProductManagementInt {
+public class ProxyProductManagement implements IProductManagement {
     private Logger logger = Logger.getLogger("ProductManagement");
     private Connection connection;
-    private ProductManagement productManagement;
+    private ProductManagement.ProductController controller;
     @Override
     public void openSession() {
         // Logging
@@ -26,9 +25,10 @@ public class ProxyProductManagement implements ProductManagementInt {
 
         // Create new Session
         try {
-            productManagement = new ProductManagement(connection = DatabaseConnection.getConnection());
+            ProductManagement productManagement = new ProductManagement(connection = DatabaseConnection.getConnection());
+            controller = productManagement.new ProductController();
         } catch (SQLException e) {
-            logger.log(Level.SEVERE, "Die Session konnte nicht geschlossen werden wegen eines Errors. Siehe folgende Exception:", e);
+            logger.log(Level.SEVERE, "Die Session konnte nicht geöffnet werden wegen eines Errors. Siehe folgende Fehlermeldung:", e);
         }
     }
 
@@ -47,7 +47,7 @@ public class ProxyProductManagement implements ProductManagementInt {
         try {
             connection.close();
             connection = null;
-            productManagement = null;
+            controller = null;
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Die Session konnte nicht geschlossen werden. Siehe folgende Fehlermeldung: " + e.getMessage(), e);
         }

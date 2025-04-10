@@ -1,30 +1,30 @@
 package org.hbrs.ooka.uebung1.component;
 
-import org.hbrs.ooka.uebung1.interfaces.Caching;
-import org.hbrs.ooka.uebung1.interfaces.ProductManagementInt;
+import org.hbrs.ooka.uebung1.interfaces.ICaching;
+import org.hbrs.ooka.uebung1.interfaces.IProductManagement;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class Port {
-    private @Nullable Caching cache;
+    private static @Nullable ICaching cache;
 
-    boolean isCacheEmpty(){
+    static boolean isCacheEmpty(){
         return cache == null;
     }
 
-    public void setCache(@NotNull Caching cache) {
-        this.cache = cache;
+    public static void setCache(@NotNull ICaching cache) {
+        cache = cache;
     }
 
-    public void clearCache(){
+    public static void clearCache(){
         cache = null;
     }
 
-    @Nullable Caching getCache() {
+    static @Nullable ICaching getCache() {
         return cache;
     }
 
-    public ProductManagementInt getInterface(){
+    public static IProductManagement getInterface(){
         return new ProxyProductManagement();
     }
 }

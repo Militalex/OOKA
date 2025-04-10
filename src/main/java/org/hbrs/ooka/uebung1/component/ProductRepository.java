@@ -29,7 +29,7 @@ public class ProductRepository {
 
     public void addProduct(@NotNull Product product) throws SQLException {
         PreparedStatement pstmt = this.connection.prepareStatement(
-                "INSERT INTO products (name, price) VALUES (?, ?)");
+                "INSERT INTO " + TABLE_NAME + " (name, price) VALUES (?, ?)");
         pstmt.setString(1, product.getName());
         pstmt.setDouble(2, product.getPrice());
         pstmt.executeUpdate();

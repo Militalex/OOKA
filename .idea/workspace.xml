@@ -4,23 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eec5bcc-940c-4ed5-aa61-73870d3cf9a0" name="Changes" comment="Initial Commit V02">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProductManagement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProxyProductManagement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/interfaces/Caching.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/interfaces/IProductCrud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="8eec5bcc-940c-4ed5-aa61-73870d3cf9a0" name="Changes" comment="Bearbeitung 04.04.2025">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/HashMapCache.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/CachingInt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/Port.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/Port.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/ProductControllerProxy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/ProductManagementInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/interfaces/ProductManagementInt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/entities/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ConnectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ConnectionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/Port.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/Port.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProductManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProductManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProxyProductManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProxyProductManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/interfaces/Caching.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/interfaces/ICaching.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/interfaces/ProductManagementInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/interfaces/IProductManagement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -169,7 +162,9 @@
       <workItem from="1743351909139" duration="6532000" />
       <workItem from="1743585282463" duration="1072000" />
       <workItem from="1743618069653" duration="2196000" />
-      <workItem from="1743772193512" duration="13632000" />
+      <workItem from="1743772193512" duration="14327000" />
+      <workItem from="1744201446900" duration="1294000" />
+      <workItem from="1744287705734" duration="7865000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -195,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743586103555</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Bearbeitung 04.04.2025">
+      <option name="closed" value="true" />
+      <created>1743786801341</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1743786801341</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,7 +207,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Initial Commit V02" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit V02" />
+    <MESSAGE value="Bearbeitung 04.04.2025" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bearbeitung 04.04.2025" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/OOKAUe1$.ic" NAME=" Coverage Results" MODIFIED="1743099968890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

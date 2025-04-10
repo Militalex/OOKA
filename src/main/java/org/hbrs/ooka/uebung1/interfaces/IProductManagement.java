@@ -9,7 +9,7 @@ package org.hbrs.ooka.uebung1.interfaces;
  * 3. Dann MUSS ein externer Client mit der Methode closeConnection() die Session explizit schließen!
  */
 
-public interface ProductManagementInt extends IProductCrud{
+public interface IProductManagement extends IProductCrud{
     // Lifecycle-Methoden (dürfen nicht verändert werden, siehe Spezifikation im Kommentar
 
     // Öffnen einer Session (hier sollte die Verbindung zur Datenbank hergestellt werden)
