@@ -2,7 +2,6 @@ package org.hbrs.ooka.uebung1.interfaces;
 
 /**
  * Spezifikation des Interfaces ProductManagementInt:
- *
  * 1. Zunächst MUSS ein externer Client (außerhalb der Komponente!) mit der Methode
  * openConnection() eine Session explizit öffnen!
  * 2. Methoden zur Suche, Einfügen usw. können beliebig ausgeführt werden.

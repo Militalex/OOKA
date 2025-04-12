@@ -63,10 +63,9 @@ public class Product {
      * Wichtig für den Junit-Test!!
      */
     public boolean equals(Object o) {
-        if (!(o instanceof Product))
+        if (!(o instanceof Product p))
             return false;
 
-        Product p = (Product) o;
         return p.getName().equals(this.getName()) && p.getPrice() == this.getPrice();
     }
 }

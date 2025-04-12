@@ -3,7 +3,6 @@ package org.hbrs.ooka.uebung1;
 import org.hbrs.ooka.uebung1.interfaces.ICaching;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Set;
 
 public class HashMapCache<T> implements ICaching<T> {
