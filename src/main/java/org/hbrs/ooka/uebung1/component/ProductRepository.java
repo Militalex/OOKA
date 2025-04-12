@@ -2,10 +2,7 @@ package org.hbrs.ooka.uebung1.component;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,25 +34,32 @@ public class ProductRepository {
 
     public boolean contains(Product product) throws SQLException {
         PreparedStatement pstmt = connection.prepareStatement(
-                "SELECT * FROM " + TABLE_NAME + " WHERE name=" + product.getName());
+                "SELECT * FROM " + TABLE_NAME + " WHERE name=? AND price=?");
+        pstmt.setString(1, product.getName());
+        pstmt.setDouble(2, product.getPrice());
         ResultSet rs = pstmt.executeQuery();
         return rs.next();
     }
 
-    public Product[] getProductByName(String name) throws SQLException {
-        return getProductBySql("SELECT * FROM " + TABLE_NAME + " WHERE name=" + name);
+    public List<Product> getProductsByName(String name) throws SQLException {
+        PreparedStatement pstmt = this.connection.prepareStatement("SELECT * FROM " + TABLE_NAME + " WHERE name=?");
+        pstmt.setString(1, name);
+        return getProductsBySql(pstmt);
     }
 
-    public Product[] getProductByPrice(double price) throws SQLException {
-        return getProductBySql("SELECT * FROM " + TABLE_NAME + " WHERE price = ?");
+    public List<Product> getProductsByPrice(double price) throws SQLException {
+        PreparedStatement pstmt = this.connection.prepareStatement("SELECT * FROM " + TABLE_NAME + " WHERE price=?");
+        pstmt.setDouble(1, price);
+        return getProductsBySql(pstmt);
     }
 
-    public Product[] getAllProducts() throws SQLException {
-        return getProductBySql("SELECT * FROM " + TABLE_NAME);
+    public List<Product> getAllProducts() throws SQLException {
+        PreparedStatement pstmt = this.connection.prepareStatement("SELECT * FROM " + TABLE_NAME);
+        return getProductsBySql(pstmt);
     }
 
-    public Product[] deleteProductByName(String name) throws SQLException {
-        Product[] deletedProducts = getProductByName(name);
+    public List<Product> deleteProductsByName(String name) throws SQLException {
+        List<Product> deletedProducts = getProductsByName(name);
 
         PreparedStatement pstmt = connection.prepareStatement(
                 "DELETE FROM " + TABLE_NAME + " WHERE name = ?;");
@@ -65,8 +69,8 @@ public class ProductRepository {
         return deletedProducts;
     }
 
-    public Product[] deleteProductByPrice(double price) throws SQLException {
-        Product[] deletedProducts = getProductByPrice(price);
+    public List<Product> deleteProductsByPrice(double price) throws SQLException {
+        List<Product> deletedProducts = getProductsByPrice(price);
 
         PreparedStatement pstmt = connection.prepareStatement(
                 "DELETE FROM " + TABLE_NAME + " WHERE price = ?;");
@@ -76,8 +80,8 @@ public class ProductRepository {
         return deletedProducts;
     }
 
-    public Product[] deleteAll() throws SQLException {
-        Product[] deletedProducts = getAllProducts();
+    public List<Product> deleteAll() throws SQLException {
+        List<Product> deletedProducts = getAllProducts();
 
         connection.createStatement().execute(
                 "TRUNCATE FROM " + TABLE_NAME + ";");
@@ -85,11 +89,10 @@ public class ProductRepository {
         return deletedProducts;
     }
 
-    private Product[] getProductBySql(String sql) throws SQLException {
+    private List<Product> getProductsBySql(PreparedStatement sql) throws SQLException {
         List<Product> productList = new ArrayList<>();
 
-        PreparedStatement pstmt = this.connection.prepareStatement(sql);
-        ResultSet rs = pstmt.executeQuery();
+        ResultSet rs = sql.executeQuery();
         while (rs.next()) {
             productList.add(new Product(
                     rs.getInt("id"),
@@ -97,8 +100,6 @@ public class ProductRepository {
                     rs.getDouble("price")
             ));
         }
-        Product[] productArray = new Product[productList.size()];
-        productList.toArray(productArray);
-        return productArray;
+        return productList;
     }
 }

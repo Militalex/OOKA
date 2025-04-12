@@ -20,7 +20,11 @@ public class DatabaseConnection {
         }
 
         public static void deleteTable(Connection connection, String tableName) throws SQLException {
-                connection.createStatement().execute("DROP TABLE products");
+                if (!tableName.matches("[a-zA-Z_][a-zA-Z_0-9]*")) {
+                        throw new SQLException("Invalid table name: " + tableName);
+                }
+                Statement stmt = connection.createStatement();
+                stmt.execute("DROP TABLE " + tableName);
         }
 }
 

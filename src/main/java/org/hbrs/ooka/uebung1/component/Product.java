@@ -53,7 +53,7 @@ public class Product {
         // Wir lassen mal die ID eines Produkts weg, da diese nicht immer gesetzt ist bzw. ohnehin
         // über Auto-Increment in der Datenbank gesetzt wird.
         return "Product{" +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", price=" + price +
                 '}';
     }

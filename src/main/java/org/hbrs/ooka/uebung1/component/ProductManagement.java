@@ -6,12 +6,14 @@ import org.jetbrains.annotations.Nullable;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ProductManagement {
 
     private final ProductRepository repository;
-    private @Nullable ICaching cache;
+    private @Nullable ICaching<List<Product>> cache;
 
     public ProductManagement(Connection connection) throws SQLException {
         repository = new ProductRepository(connection);
@@ -25,51 +27,80 @@ public class ProductManagement {
     public class ProductController {
 
         public void addProduct(@NotNull Product product) throws SQLException {
+            fetchCache();
             if (cache != null){
-                // Put Product into cache
-                if (cache.isKeyOccupied(product.toString())){
-                    cache.updateResult(product.toString(), List.of(product));
+                // Put product into cache 
+                if (cache.isKeyOccupied(product.getName())){
+                    cache.readResult(product.getName()).add(product);
+                }
+                else  {
+                    cache.cacheResult(product.getName(), new ArrayList<>(List.of(product)));
+                }
+                
+                if (cache.isKeyOccupied("" + product.getPrice())){
+                    cache.readResult("" + product.getPrice()).add(product);
                 }
                 else {
-                    cache.cacheResult(product.toString(), List.of(product));
-                }
-
-                // Refresh
-                if (cache.isKeyOccupied("Products=" + product.getName())){
-                    cache.readResult("Products=" + product.getName()).add(product);
-                }
-                if (cache.isKeyOccupied("Products=" + product.getPrice())){
-                    cache.readResult("Products=" + product.getPrice()).add(product);
+                    cache.cacheResult("" + product.getPrice(), new ArrayList<>(List.of(product)));
                 }
             }
             repository.addProduct(product);
         }
 
         public boolean contains(Product product) throws SQLException {
-            if (cache != null && cache.isKeyOccupied(product.toString())){
+            fetchCache();
+            if (cache != null && cache.isKeyOccupied(product.getName()) && cache.readResult(product.getName()).contains(product)){
                 return true;
             }
             return repository.contains(product);
         }
 
-        public Product[] getProductByName(String name) {
-            if (cache != null && cache.isKeyOccupied("Products=" + name)){
-                return
+        public List<Product> getProductsByName(String name) throws SQLException {
+            fetchCache();
+            if (cache != null && cache.isKeyOccupied(name)){
+                return cache.readResult(name);
             }
-
-            return new Product[0];
+            List<Product> productList = repository.getProductsByName(name);
+            if (cache != null){
+                cache.cacheResult(name, productList);
+            }
+            return productList;
         }
 
-        public Product[] getProductByPrice(double price) {
-            return new Product[0];
+        public List<Product> getProductsByPrice(double price) throws SQLException {
+            fetchCache();
+            if (cache != null && cache.isKeyOccupied("" + price)){
+                return cache.readResult("" + price);
+            }
+            List<Product> productList = repository.getProductsByPrice(price);
+            if (cache != null) {
+                cache.cacheResult("" + price, productList);
+            }
+            return productList;
         }
 
-        public Product[] deleteProductByName(String name) {
-            return new Product[0];
+        public List<Product> deleteProductsByName(String name) throws SQLException {
+            fetchCache();
+            if (cache != null && cache.isKeyOccupied(name)){
+                cache.takeResult(name);
+            }
+            return repository.deleteProductsByName(name);
         }
 
-        public Product[] deleteProductByPrice(double price) {
-            return new Product[0];
+        public List<Product> deleteProductsByPrice(double price) throws SQLException {
+            fetchCache();
+            if (cache != null && cache.isKeyOccupied("" + price)){
+                cache.takeResult("" + price);
+            }
+            return repository.deleteProductsByPrice(price);
+        }
+
+        public List<Product> deleteAll() throws SQLException {
+            fetchCache();
+            if (cache != null){
+                cache.clearCache();
+            }
+            return repository.deleteAll();
         }
     }
 }

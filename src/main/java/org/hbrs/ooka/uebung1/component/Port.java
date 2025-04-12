@@ -5,14 +5,16 @@ import org.hbrs.ooka.uebung1.interfaces.IProductManagement;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
+
 public class Port {
-    private static @Nullable ICaching cache;
+    private static @Nullable ICaching<List<Product>> cache;
 
     static boolean isCacheEmpty(){
         return cache == null;
     }
 
-    public static void setCache(@NotNull ICaching cache) {
+    public static void setCache(@NotNull ICaching<List<Product>> cache) {
         cache = cache;
     }
 
@@ -20,7 +22,7 @@ public class Port {
         cache = null;
     }
 
-    static @Nullable ICaching getCache() {
+    static @Nullable ICaching<List<Product>> getCache() {
         return cache;
     }
 

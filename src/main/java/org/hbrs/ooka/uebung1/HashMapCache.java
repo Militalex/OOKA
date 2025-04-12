@@ -6,8 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
-public class HashMapCache implements ICaching {
-    private final HashMap<String, List<Object>> cacheMap = new HashMap<>();
+public class HashMapCache<T> implements ICaching<T> {
+    private final HashMap<String, T> cacheMap = new HashMap<>();
 
     @Override
     public boolean isKeyOccupied(String key) {
@@ -20,24 +20,24 @@ public class HashMapCache implements ICaching {
     }
 
     @Override
-    public void cacheResult(String key, List<Object> value) {
+    public void cacheResult(String key, T value) {
         if (isKeyOccupied(key))
             throw new IllegalStateException(key + " is already occupied.");
         cacheMap.put(key, value);
     }
 
     @Override
-    public List<Object> readResult(String key) {
+    public T readResult(String key) {
         if (!isKeyOccupied(key))
             throw new IllegalArgumentException(key + " is not occupied.");
         return cacheMap.get(key);
     }
 
     @Override
-    public List<Object> takeResult(String key) {
+    public T takeResult(String key) {
         if (!isKeyOccupied(key))
             throw new IllegalArgumentException(key + " is not occupied.");
-        List<Object> result = readResult(key);
+        T result = readResult(key);
         cacheMap.remove(key);
         return result;
     }

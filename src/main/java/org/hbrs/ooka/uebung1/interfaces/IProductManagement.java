@@ -16,5 +16,5 @@ public interface IProductManagement extends IProductCrud{
     void openSession();
 
     // Schließen einer Session (hier sollte die Verbindung zur Datenbank geschlossen werden)
-    void closeSession();
+    void closeSession(boolean dropProducts);
 }
