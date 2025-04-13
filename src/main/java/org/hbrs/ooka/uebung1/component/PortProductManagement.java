@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class Port {
+public class PortProductManagement {
     private static @Nullable ICaching<List<Product>> cache;
 
     static boolean isCacheEmpty(){
@@ -15,7 +15,7 @@ public class Port {
     }
 
     public static void setCache(@NotNull ICaching<List<Product>> cache) {
-        cache = cache;
+        PortProductManagement.cache = cache;
     }
 
     public static void clearCache(){

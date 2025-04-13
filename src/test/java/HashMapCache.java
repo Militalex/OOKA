@@ -1,5 +1,3 @@
-package org.hbrs.ooka.uebung1;
-
 import org.hbrs.ooka.uebung1.interfaces.ICaching;
 
 import java.util.HashMap;

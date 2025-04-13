@@ -20,7 +20,7 @@ public class ProductManagement {
     }
 
     public void fetchCache(){
-        cache = Port.getCache();
+        cache = PortProductManagement.getCache();
     }
 
     public class ProductController {
@@ -28,14 +28,15 @@ public class ProductManagement {
         public void addProduct(@NotNull Product product) throws SQLException {
             fetchCache();
             if (cache != null){
-                // Put product into cache 
+                // Put product into cache by name
                 if (cache.isKeyOccupied(product.getName())){
                     cache.readResult(product.getName()).add(product);
                 }
                 else  {
                     cache.cacheResult(product.getName(), new ArrayList<>(List.of(product)));
                 }
-                
+
+                // Put product into cache by price
                 if (cache.isKeyOccupied("" + product.getPrice())){
                     cache.readResult("" + product.getPrice()).add(product);
                 }
@@ -78,10 +79,16 @@ public class ProductManagement {
             return productList;
         }
 
+        public List<Product> getAllProducts() throws SQLException {
+            fetchCache();
+            return repository.getAllProducts();
+        }
+
         public List<Product> deleteProductsByName(String name) throws SQLException {
             fetchCache();
             if (cache != null && cache.isKeyOccupied(name)){
-                cache.takeResult(name);
+                List<Product> productList = cache.takeResult(name);
+                productList.stream().map(Product::getPrice).forEach(price -> cache.takeResult("" + price));
             }
             return repository.deleteProductsByName(name);
         }
@@ -89,7 +96,8 @@ public class ProductManagement {
         public List<Product> deleteProductsByPrice(double price) throws SQLException {
             fetchCache();
             if (cache != null && cache.isKeyOccupied("" + price)){
-                cache.takeResult("" + price);
+                List<Product> productList = cache.takeResult("" + price);
+                productList.stream().map(Product::getName).forEach(name -> cache.takeResult(name));
             }
             return repository.deleteProductsByPrice(price);
         }

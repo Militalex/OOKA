@@ -64,7 +64,7 @@ public class ProductRepository {
         PreparedStatement pstmt = connection.prepareStatement(
                 "DELETE FROM " + TABLE_NAME + " WHERE name = ?;");
         pstmt.setString(1, name);
-        pstmt.executeQuery();
+        pstmt.execute();
 
         return deletedProducts;
     }
@@ -75,7 +75,7 @@ public class ProductRepository {
         PreparedStatement pstmt = connection.prepareStatement(
                 "DELETE FROM " + TABLE_NAME + " WHERE price = ?;");
         pstmt.setDouble(1, price);
-        pstmt.executeQuery();
+        pstmt.execute();
 
         return deletedProducts;
     }
@@ -84,7 +84,7 @@ public class ProductRepository {
         List<Product> deletedProducts = getAllProducts();
 
         connection.createStatement().execute(
-                "TRUNCATE FROM " + TABLE_NAME + ";");
+                "TRUNCATE TABLE " + TABLE_NAME + ";");
 
         return deletedProducts;
     }

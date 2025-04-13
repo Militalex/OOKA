@@ -61,7 +61,7 @@ public class ProxyProductManagement implements IProductManagement {
             return;
         }
 
-        if (Port.isCacheEmpty()){
+        if (PortProductManagement.isCacheEmpty()){
             logger.warning("Cache ist nicht gesetzt worden. Es wird empfohlen einen Cache zu setzen, damit Datenbankzugriffe" +
                     "mittels des Caches minimiert werden können.");
         }
@@ -190,7 +190,35 @@ public class ProxyProductManagement implements IProductManagement {
             return Collections.emptyList();
         }
 
-        return null;
+        // Error Handling
+        try{
+            return controller.getProductsByPrice(price);
+        } catch (Exception e){
+            logger.log(Level.SEVERE, "Das Produkt mit dem Preis " + price + " konnte aufgrund eines Fehlers nicht in der Datenbank " +
+                    "gefunden werden. Es wird eine leere Liste zurückgegeben... . \nSiehe die folgende Fehlermeldung: ", e);
+            return Collections.emptyList();
+        }
+    }
+
+    @Override
+    public List<Product> getAllProducts() {
+        // Logging
+        logger.info("Zugriff auf ProductManagement über Methode getAllProducts. ");
+
+        // Session isn't opened
+        if (!isSessionOpen()){
+            logger.severe("Aktion kann nicht durchführt werden, da keine Session geöffnet ist. Gebe leere Liste zurück... .");
+            return Collections.emptyList();
+        }
+
+        // Error Handling
+        try{
+            return controller.getAllProducts();
+        } catch (Exception e){
+            logger.log(Level.SEVERE, "Die Produkte konnten aufgrund eines Fehlers nicht aus der Datenbank " +
+                    "abgefrufen werden. Es wird eine leere Liste zurückgegeben... . \nSiehe die folgende Fehlermeldung: ", e);
+            return Collections.emptyList();
+        }
     }
 
     @Override
@@ -205,7 +233,15 @@ public class ProxyProductManagement implements IProductManagement {
             return Collections.emptyList();
         }
 
-        return null;
+        // Error Handling
+        try{
+            return controller.deleteProductsByName(name);
+        } catch (Exception e){
+            logger.log(Level.SEVERE, "Das Produkt " + name + " konnte aufgrund eines Fehlers nicht in der Datenbank " +
+                    "gefunden werden. Das Produkt konnte nicht gelöscht werden und es wird eine leere Liste zurückgegeben... . " +
+                    "\nSiehe die folgende Fehlermeldung: ", e);
+            return Collections.emptyList();
+        }
     }
 
     @Override
@@ -220,7 +256,15 @@ public class ProxyProductManagement implements IProductManagement {
             return Collections.emptyList();
         }
 
-        return null;
+        // Error Handling
+        try{
+            return controller.deleteProductsByPrice(price);
+        } catch (Exception e){
+            logger.log(Level.SEVERE, "Das Produkt mit dem Preis " + price + " konnte aufgrund eines Fehlers nicht in der Datenbank " +
+                    "gefunden werden. Das Produkt konnte nicht gelöscht werden und es wird eine leere Liste zurückgegeben... . " +
+                    "\nSiehe die folgende Fehlermeldung: ", e);
+            return Collections.emptyList();
+        }
     }
 
     @Override
