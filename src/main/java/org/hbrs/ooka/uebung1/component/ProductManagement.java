@@ -14,18 +14,18 @@ public class ProductManagement {
     private final ProductRepository repository;
     private @Nullable ICaching<List<Product>> cache;
 
-    public ProductManagement(Connection connection) throws SQLException {
+    ProductManagement(Connection connection) throws SQLException {
         repository = new ProductRepository(connection);
         fetchCache();
     }
 
-    public void fetchCache(){
+    private void fetchCache(){
         cache = PortProductManagement.getCache();
     }
 
-    public class ProductController {
+    class ProductController {
 
-        public void addProduct(@NotNull Product product) throws SQLException {
+        void addProduct(@NotNull Product product) throws SQLException {
             fetchCache();
             if (cache != null){
                 // Put product into cache by name
@@ -47,7 +47,7 @@ public class ProductManagement {
             repository.addProduct(product);
         }
 
-        public boolean contains(Product product) throws SQLException {
+        boolean contains(Product product) throws SQLException {
             fetchCache();
             if (cache != null && cache.isKeyOccupied(product.getName()) && cache.readResult(product.getName()).contains(product)){
                 return true;
@@ -55,7 +55,7 @@ public class ProductManagement {
             return repository.contains(product);
         }
 
-        public List<Product> getProductsByName(String name) throws SQLException {
+        List<Product> getProductsByName(String name) throws SQLException {
             fetchCache();
             if (cache != null && cache.isKeyOccupied(name)){
                 return cache.readResult(name);
@@ -67,7 +67,7 @@ public class ProductManagement {
             return productList;
         }
 
-        public List<Product> getProductsByPrice(double price) throws SQLException {
+        List<Product> getProductsByPrice(double price) throws SQLException {
             fetchCache();
             if (cache != null && cache.isKeyOccupied("" + price)){
                 return cache.readResult("" + price);
@@ -79,12 +79,12 @@ public class ProductManagement {
             return productList;
         }
 
-        public List<Product> getAllProducts() throws SQLException {
+        List<Product> getAllProducts() throws SQLException {
             fetchCache();
             return repository.getAllProducts();
         }
 
-        public List<Product> deleteProductsByName(String name) throws SQLException {
+        List<Product> deleteProductsByName(String name) throws SQLException {
             fetchCache();
             if (cache != null && cache.isKeyOccupied(name)){
                 List<Product> productList = cache.takeResult(name);
@@ -93,7 +93,7 @@ public class ProductManagement {
             return repository.deleteProductsByName(name);
         }
 
-        public List<Product> deleteProductsByPrice(double price) throws SQLException {
+        List<Product> deleteProductsByPrice(double price) throws SQLException {
             fetchCache();
             if (cache != null && cache.isKeyOccupied("" + price)){
                 List<Product> productList = cache.takeResult("" + price);
@@ -102,7 +102,7 @@ public class ProductManagement {
             return repository.deleteProductsByPrice(price);
         }
 
-        public List<Product> deleteAll() throws SQLException {
+        List<Product> deleteAll() throws SQLException {
             fetchCache();
             if (cache != null){
                 cache.clearCache();

@@ -21,7 +21,7 @@ public class ProxyProductManagement implements IProductManagement {
     private Connection connection;
     private ProductManagement.ProductController controller;
 
-    public ProxyProductManagement(){
+    ProxyProductManagement(){
         Logger logger = Logger.getLogger("ProductManagement");
         logger.setUseParentHandlers(false);
         logger.setLevel(Level.ALL);

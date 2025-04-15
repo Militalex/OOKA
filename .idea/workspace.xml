@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eec5bcc-940c-4ed5-aa61-73870d3cf9a0" name="Changes" comment="Bearbeitung 12.04.2025 V02">
+    <list default="true" id="8eec5bcc-940c-4ed5-aa61-73870d3cf9a0" name="Changes" comment="Bearbeitung 14.04.2025">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/HashMapCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HashMapCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/Port.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/PortProductManagement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProductManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProductManagement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProductRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProxyProductManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProxyProductManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/interfaces/IProductCrud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/interfaces/IProductCrud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ConnectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ConnectionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestMainClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/AldaConnectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AldaConnectionTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,21 +106,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConnectionTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AldaConnectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOKAUebungNr1" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ConnectionTest" />
+      <option name="MAIN_CLASS_NAME" value="AldaConnectionTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConnectionTest.persistenceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ConnectionTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOKAUebungNr1" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ConnectionTest" />
-      <option name="METHOD_NAME" value="persistenceTest" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -153,10 +147,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ConnectionTest (1)" />
+        <item itemvalue="JUnit.AldaConnectionTest" />
         <item itemvalue="JUnit.ConnectionTest.roundTripWithCache" />
         <item itemvalue="JUnit.ConnectionTest.roundTripWithoutCache" />
         <item itemvalue="Application.TestMainClass" />
-        <item itemvalue="JUnit.ConnectionTest.persistenceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -186,7 +180,8 @@
       <workItem from="1744287705734" duration="7865000" />
       <workItem from="1744490923510" duration="674000" />
       <workItem from="1744491606174" duration="1630000" />
-      <workItem from="1744572707114" duration="8919000" />
+      <workItem from="1744572707114" duration="9979000" />
+      <workItem from="1744672443925" duration="4268000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -236,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744493196350</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Bearbeitung 14.04.2025">
+      <option name="closed" value="true" />
+      <created>1744582814217</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1744582814217</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +262,8 @@
     <MESSAGE value="Bearbeitung 04.04.2025" />
     <MESSAGE value="Bearbeitung 12.04.2025" />
     <MESSAGE value="Bearbeitung 12.04.2025 V02" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bearbeitung 12.04.2025 V02" />
+    <MESSAGE value="Bearbeitung 14.04.2025" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bearbeitung 14.04.2025" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/OOKAUe1$.ic" NAME=" Coverage Results" MODIFIED="1743099968890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
