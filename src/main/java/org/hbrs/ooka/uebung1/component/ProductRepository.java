@@ -10,7 +10,7 @@ public class ProductRepository {
     public static final String TABLE_NAME = "products";
     private final Connection connection;
 
-    public ProductRepository(Connection connection) throws SQLException {
+    ProductRepository(Connection connection) throws SQLException {
         this.connection = connection;
 
         // Create table if not existent
@@ -24,7 +24,7 @@ public class ProductRepository {
         }
     }
 
-    public void addProduct(@NotNull Product product) throws SQLException {
+    void addProduct(@NotNull Product product) throws SQLException {
         PreparedStatement pstmt = this.connection.prepareStatement(
                 "INSERT INTO " + TABLE_NAME + " (name, price) VALUES (?, ?)");
         pstmt.setString(1, product.getName());
@@ -32,7 +32,7 @@ public class ProductRepository {
         pstmt.executeUpdate();
     }
 
-    public boolean contains(Product product) throws SQLException {
+    boolean contains(Product product) throws SQLException {
         PreparedStatement pstmt = connection.prepareStatement(
                 "SELECT * FROM " + TABLE_NAME + " WHERE name=? AND price=?");
         pstmt.setString(1, product.getName());
@@ -41,24 +41,24 @@ public class ProductRepository {
         return rs.next();
     }
 
-    public List<Product> getProductsByName(String name) throws SQLException {
+    List<Product> getProductsByName(String name) throws SQLException {
         PreparedStatement pstmt = this.connection.prepareStatement("SELECT * FROM " + TABLE_NAME + " WHERE name=?");
         pstmt.setString(1, name);
         return getProductsBySql(pstmt);
     }
 
-    public List<Product> getProductsByPrice(double price) throws SQLException {
+    List<Product> getProductsByPrice(double price) throws SQLException {
         PreparedStatement pstmt = this.connection.prepareStatement("SELECT * FROM " + TABLE_NAME + " WHERE price=?");
         pstmt.setDouble(1, price);
         return getProductsBySql(pstmt);
     }
 
-    public List<Product> getAllProducts() throws SQLException {
+    List<Product> getAllProducts() throws SQLException {
         PreparedStatement pstmt = this.connection.prepareStatement("SELECT * FROM " + TABLE_NAME);
         return getProductsBySql(pstmt);
     }
 
-    public List<Product> deleteProductsByName(String name) throws SQLException {
+    List<Product> deleteProductsByName(String name) throws SQLException {
         List<Product> deletedProducts = getProductsByName(name);
 
         PreparedStatement pstmt = connection.prepareStatement(
@@ -69,7 +69,7 @@ public class ProductRepository {
         return deletedProducts;
     }
 
-    public List<Product> deleteProductsByPrice(double price) throws SQLException {
+    List<Product> deleteProductsByPrice(double price) throws SQLException {
         List<Product> deletedProducts = getProductsByPrice(price);
 
         PreparedStatement pstmt = connection.prepareStatement(
@@ -80,7 +80,7 @@ public class ProductRepository {
         return deletedProducts;
     }
 
-    public List<Product> deleteAll() throws SQLException {
+    List<Product> deleteAll() throws SQLException {
         List<Product> deletedProducts = getAllProducts();
 
         connection.createStatement().execute(
