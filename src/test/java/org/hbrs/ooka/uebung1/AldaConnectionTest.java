@@ -1,3 +1,5 @@
+package org.hbrs.ooka.uebung1;
+
 import org.hbrs.ooka.uebung1.component.DatabaseConnection;
 import org.hbrs.ooka.uebung1.component.Product;
 import org.junit.jupiter.api.AfterEach;

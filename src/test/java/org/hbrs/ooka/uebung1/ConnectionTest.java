@@ -1,3 +1,5 @@
+package org.hbrs.ooka.uebung1;
+
 import org.hbrs.ooka.uebung1.component.PortProductManagement;
 import org.hbrs.ooka.uebung1.component.Product;
 import org.hbrs.ooka.uebung1.interfaces.IProductManagement;

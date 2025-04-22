@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eec5bcc-940c-4ed5-aa61-73870d3cf9a0" name="Changes" comment="Bearbeitung 14.04.2025">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProductManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProductManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProxyProductManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProxyProductManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/AldaConnectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AldaConnectionTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="8eec5bcc-940c-4ed5-aa61-73870d3cf9a0" name="Changes" comment="Bearbeitung 14.04.2025" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,7 +36,9 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2eqxlcLgaf034JaEXxbncVZegt1" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -108,17 +104,17 @@
     </configuration>
     <configuration name="AldaConnectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOKAUebungNr1" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AldaConnectionTest" />
+      <option name="PACKAGE_NAME" value="org.hbrs.ooka.uebung1" />
+      <option name="MAIN_CLASS_NAME" value="org.hbrs.ooka.uebung1.AldaConnectionTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConnectionTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ConnectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOKAUebungNr1" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ConnectionTest" />
+      <option name="PACKAGE_NAME" value="org.hbrs.ooka.uebung1" />
+      <option name="MAIN_CLASS_NAME" value="org.hbrs.ooka.uebung1.ConnectionTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -126,8 +122,8 @@
     </configuration>
     <configuration name="ConnectionTest.roundTripWithCache" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOKAUebungNr1" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ConnectionTest" />
+      <option name="PACKAGE_NAME" value="org.hbrs.ooka.uebung1" />
+      <option name="MAIN_CLASS_NAME" value="org.hbrs.ooka.uebung1.ConnectionTest" />
       <option name="METHOD_NAME" value="roundTripWithCache" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -136,8 +132,8 @@
     </configuration>
     <configuration name="ConnectionTest.roundTripWithoutCache" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OOKAUebungNr1" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ConnectionTest" />
+      <option name="PACKAGE_NAME" value="org.hbrs.ooka.uebung1" />
+      <option name="MAIN_CLASS_NAME" value="org.hbrs.ooka.uebung1.ConnectionTest" />
       <option name="METHOD_NAME" value="roundTripWithoutCache" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
