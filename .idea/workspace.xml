@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="H2 JDBC Treiber - Library" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eec5bcc-940c-4ed5-aa61-73870d3cf9a0" name="Changes" comment="Bearbeitung 14.04.2025" />
+    <list default="true" id="8eec5bcc-940c-4ed5-aa61-73870d3cf9a0" name="Changes" comment="Bearbeitung für Übung 2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jars/OOKAUebungNr1-1.0-SNAPSHOT mit Dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jars/OOKAUebungNr1-1.0-SNAPSHOT mit Dependencies.jar" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,17 +66,18 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "com.codeium.enabled": "true",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Sciebo/Dokumente/Studium/03 Master Hochschule Bonn Rhein-Sieg/1. Semester/Objektorientierte Komponenten-Architekturen/03 Übungen/.Code/Komponente",
+    "last_opened_file_path": "E:/Sciebo/Dokumente/Studium/03 Master Hochschule Bonn Rhein-Sieg/1. Semester/Objektorientierte Komponenten-Architekturen/03 Übungen/.Code/Komponente/src/jars",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.44827586",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   },
@@ -87,6 +96,7 @@
       <recent name="E:\Sciebo\Dokumente\Studium\03 Master Hochschule Bonn Rhein-Sieg\1. Semester\Objektorientierte Komponenten-Architekturen\03 Übungen\.Code\Komponente\src\main\java\org\hbrs\ooka\uebung2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Sciebo\Dokumente\Studium\03 Master Hochschule Bonn Rhein-Sieg\1. Semester\Objektorientierte Komponenten-Architekturen\03 Übungen\.Code\Komponente" />
       <recent name="E:\Sciebo\Dokumente\Studium\03 Master Hochschule Bonn Rhein-Sieg\1. Semester\Objektorientierte Komponenten-Architekturen\03 Übungen\Code\src\main\java\org\hbrs\ooka\uebung1" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -182,6 +192,7 @@
       <workItem from="1744572707114" duration="9979000" />
       <workItem from="1744672443925" duration="4268000" />
       <workItem from="1745704937356" duration="2081000" />
+      <workItem from="1745707750482" duration="611000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -239,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744582814217</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Bearbeitung für Übung 2">
+      <option name="closed" value="true" />
+      <created>1745707794625</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1745707794625</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +282,8 @@
     <MESSAGE value="Bearbeitung 12.04.2025" />
     <MESSAGE value="Bearbeitung 12.04.2025 V02" />
     <MESSAGE value="Bearbeitung 14.04.2025" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bearbeitung 14.04.2025" />
+    <MESSAGE value="Bearbeitung für Übung 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bearbeitung für Übung 2" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/OOKAUe1$.ic" NAME=" Coverage Results" MODIFIED="1743099968890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
