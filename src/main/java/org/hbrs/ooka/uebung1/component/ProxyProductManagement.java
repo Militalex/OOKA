@@ -1,6 +1,7 @@
 package org.hbrs.ooka.uebung1.component;
 
 import org.hbrs.ooka.uebung1.interfaces.IProductManagement;
+import org.hbrs.ooka.uebung1.util.LoggerUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -16,38 +17,12 @@ import java.util.logging.*;
 
 public class ProxyProductManagement implements IProductManagement {
 
-    private static final SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yy HH:mm");
     private final Logger logger;
     private Connection connection;
     private ProductManagement.ProductController controller;
 
     ProxyProductManagement(){
-        Logger logger = Logger.getLogger("ProductManagement");
-        logger.setUseParentHandlers(false);
-        logger.setLevel(Level.ALL);
-        logger.addHandler(new StreamHandler(System.out, new Formatter() {
-            @Override
-            public String format(LogRecord record) {
-                StringBuilder sb = new StringBuilder();
-                sb.append(sdf.format(new Date(record.getMillis())))
-                        .append(": [")
-                        .append(record.getLevel())
-                        .append("] ")
-                        .append(record.getMessage())
-                        .append(System.lineSeparator());
-
-                @Nullable Throwable e = record.getThrown();
-                if (e != null){
-                    StringWriter sw = new StringWriter();
-                    PrintWriter pw = new PrintWriter(sw);
-                    e.printStackTrace(pw);
-                    sb.append(System.lineSeparator()).append(sw).append(System.lineSeparator());
-                }
-
-                return sb.toString();
-            }
-        }));
-        this.logger = logger;
+        logger = LoggerUtil.getLogger(ProductManagement.class);
     }
 
     @Override

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Shaded ProduktManagement Komponente" />
+      <artifact name="ProduktManagement Komponente" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,13 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8eec5bcc-940c-4ed5-aa61-73870d3cf9a0" name="Changes" comment="Bearbeitung für Übung 2 V02">
-      <change afterPath="$PROJECT_DIR$/libs/RuntimeEnvironment Library.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/util/LoggerUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jars/ProductManagement Komponente.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jars/OOKAUebungNr1-1.0-SNAPSHOT mit Dependencies.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jars/ProduktManagementKomponente-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jars/annotations-24.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jars/h2-2.3.232.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/ProductManagementMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/ProductManagementMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/PortProductManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/PortProductManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung2/annotations/Start.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung2/annotations/Stop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProxyProductManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProxyProductManagement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +78,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Sciebo/Dokumente/Studium/03 Master Hochschule Bonn Rhein-Sieg/1. Semester/Objektorientierte Komponenten-Architekturen/03 Übungen/.Code/ProduktManagement Komponente/libs/RuntimeEnvironment Library.jar",
+    "last_opened_file_path": "D:/Dokumente/Sciebo/Dokumente/Studium/03 Master Hochschule Bonn Rhein-Sieg/1. Semester/Objektorientierte Komponenten-Architekturen/03 Übungen/.Code/ProduktManagement Client Simulation Komponente",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -102,6 +106,7 @@
       <recent name="E:\Sciebo\Dokumente\Studium\03 Master Hochschule Bonn Rhein-Sieg\1. Semester\Objektorientierte Komponenten-Architekturen\03 Übungen\.Code\Komponente\src\main\java\org\hbrs\ooka\uebung2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Dokumente\Sciebo\Dokumente\Studium\03 Master Hochschule Bonn Rhein-Sieg\1. Semester\Objektorientierte Komponenten-Architekturen\03 Übungen\.Code\ProduktManagement Komponente\jars" />
       <recent name="E:\Sciebo\Dokumente\Studium\03 Master Hochschule Bonn Rhein-Sieg\1. Semester\Objektorientierte Komponenten-Architekturen\03 Übungen\.Code\Komponente" />
       <recent name="E:\Sciebo\Dokumente\Studium\03 Master Hochschule Bonn Rhein-Sieg\1. Semester\Objektorientierte Komponenten-Architekturen\03 Übungen\Code\src\main\java\org\hbrs\ooka\uebung1" />
     </key>
@@ -110,6 +115,7 @@
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.hbrs.ooka.uebung1.util" />
       <recent name="org.hbrs.ooka.uebung1" />
       <recent name="" />
     </key>
@@ -201,6 +207,7 @@
       <workItem from="1745707750482" duration="611000" />
       <workItem from="1745708415445" duration="990000" />
       <workItem from="1745776422589" duration="3596000" />
+      <workItem from="1745851856520" duration="3169000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
