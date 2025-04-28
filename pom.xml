@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.hbrs.ooka</groupId>
-    <artifactId>OOKAUebungNr1</artifactId>
+    <artifactId>ProduktManagementKomponente</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -21,6 +21,14 @@
             <artifactId>junit-jupiter-engine</artifactId>
             <version>5.7.0</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hbrs.ooka</groupId>
+            <artifactId>RuntimeEnvironmentLibrary</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/RuntimeEnvironmentLibrary.jar</systemPath>
         </dependency>
 
         <dependency>

@@ -2,15 +2,17 @@ package org.hbrs.ooka.uebung1.component;
 
 import org.hbrs.ooka.uebung1.interfaces.ICaching;
 import org.hbrs.ooka.uebung1.interfaces.IProductManagement;
+import org.hbrs.ooka.uebung2.annotations.Port;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+@Port
 public class PortProductManagement {
     private static @Nullable ICaching<List<Product>> cache;
 
-    static boolean isCacheEmpty(){
+    public static boolean isCacheEmpty(){
         return cache == null;
     }
 
