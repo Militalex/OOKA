@@ -1,34 +1,38 @@
 package org.hbrs.ooka.uebung1.component;
 
 import org.hbrs.ooka.uebung1.interfaces.IProductManagement;
-import org.hbrs.ooka.uebung1.util.LoggerUtil;
+import org.hbrs.ooka.uebung2_3.services.logger.ILogger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.logging.*;
 
 public class ProxyProductManagement implements IProductManagement {
 
-    private final Logger logger;
+    @NotNull
+    private final ILogger logger;
     private Connection connection;
     private ProductManagement.ProductController controller;
 
     ProxyProductManagement(){
-        logger = LoggerUtil.getLogger(ProductManagement.class);
+        logger = Objects.requireNonNullElse(PortProductManagement.getLogger(), new ILogger() {
+            private Logger logger = Logger.getLogger("ProductManagement");
+            @Override
+            public void sendLog(Level level, String s, @Nullable Throwable throwable) {
+                logger.log(level, s, throwable);
+            }
+        });
     }
 
     @Override
     public void openSession() {
         // Logging
-        logger.log(Level.INFO, "Zugriff auf ProductManagement über Methode openSession.");
+        logger.sendLog(Level.INFO, "Zugriff auf ProductManagement über Methode openSession.");
 
         // Session already opened
         if (isSessionOpen()){
@@ -47,7 +51,7 @@ public class ProxyProductManagement implements IProductManagement {
             controller = productManagement.new ProductController();
             logger.info("Eine neue Session wurde erfolgreich geöffnet.");
         } catch (SQLException e) {
-            logger.log(Level.SEVERE, "Die Session konnte nicht geöffnet werden wegen eines Errors. \nSiehe folgende Fehlermeldung: ", e);
+            logger.severe("Die Session konnte nicht geöffnet werden wegen eines Errors. \nSiehe folgende Fehlermeldung: ", e);
         }
     }
 
@@ -71,7 +75,7 @@ public class ProxyProductManagement implements IProductManagement {
             try {
                 DatabaseConnection.deleteTable(connection, ProductRepository.TABLE_NAME);
             } catch (Exception e) {
-                logger.log(Level.WARNING, "Die Produkt Tabelle konnte nicht entfernt werden. Versuche die Produkte manuell " +
+                logger.warning("Die Produkt Tabelle konnte nicht entfernt werden. Versuche die Produkte manuell " +
                         "zu entfernen. \nSiehe folgende Fehlermeldung: ", e);
                 deleteAll();
             }
@@ -84,7 +88,7 @@ public class ProxyProductManagement implements IProductManagement {
             controller = null;
             logger.info("Die Session konnte erfolgreich geschlossen werden.");
         } catch (Exception e) {
-            logger.log(Level.SEVERE, "Die Session konnte nicht geschlossen werden. \nSiehe folgende Fehlermeldung: ", e);
+            logger.severe("Die Session konnte nicht geschlossen werden. \nSiehe folgende Fehlermeldung: ", e);
         }
     }
 
@@ -104,7 +108,7 @@ public class ProxyProductManagement implements IProductManagement {
         try {
             controller.addProduct(product);
         } catch (Exception e) {
-            logger.log(Level.SEVERE, "Das Produkt " + product.getName() + " mit dem Preis " + product.getPrice() +
+            logger.severe("Das Produkt " + product.getName() + " mit dem Preis " + product.getPrice() +
                     " konnte nicht hinzugefügt werden. \nSiehe die folgende Fehlermeldung: ", e);
         }
     }
@@ -125,7 +129,7 @@ public class ProxyProductManagement implements IProductManagement {
         try {
             return controller.contains(product);
         } catch (Exception e) {
-            logger.log(Level.SEVERE, "Das Produkt " + product.getName() + " mit dem Preis " + product.getPrice() +
+            logger.severe("Das Produkt " + product.getName() + " mit dem Preis " + product.getPrice() +
                     " konnte nicht auf Verfügbarkeit geprüft werden. Es wird false zurückgegeben... . \nSiehe die folgende Fehlermeldung: ", e);
             return false;
         }
@@ -147,7 +151,7 @@ public class ProxyProductManagement implements IProductManagement {
         try{
             return controller.getProductsByName(name);
         } catch (Exception e){
-            logger.log(Level.SEVERE, "Das Produkt " + name + " konnte aufgrund eines Fehlers nicht in der Datenbank " +
+            logger.severe("Das Produkt " + name + " konnte aufgrund eines Fehlers nicht in der Datenbank " +
                     "gefunden werden. Es wird eine leere Liste zurückgegeben... . \nSiehe die folgende Fehlermeldung: ", e);
             return Collections.emptyList();
         }
@@ -169,7 +173,7 @@ public class ProxyProductManagement implements IProductManagement {
         try{
             return controller.getProductsByPrice(price);
         } catch (Exception e){
-            logger.log(Level.SEVERE, "Das Produkt mit dem Preis " + price + " konnte aufgrund eines Fehlers nicht in der Datenbank " +
+            logger.severe("Das Produkt mit dem Preis " + price + " konnte aufgrund eines Fehlers nicht in der Datenbank " +
                     "gefunden werden. Es wird eine leere Liste zurückgegeben... . \nSiehe die folgende Fehlermeldung: ", e);
             return Collections.emptyList();
         }
@@ -190,7 +194,7 @@ public class ProxyProductManagement implements IProductManagement {
         try{
             return controller.getAllProducts();
         } catch (Exception e){
-            logger.log(Level.SEVERE, "Die Produkte konnten aufgrund eines Fehlers nicht aus der Datenbank " +
+            logger.severe("Die Produkte konnten aufgrund eines Fehlers nicht aus der Datenbank " +
                     "abgefrufen werden. Es wird eine leere Liste zurückgegeben... . \nSiehe die folgende Fehlermeldung: ", e);
             return Collections.emptyList();
         }
@@ -212,7 +216,7 @@ public class ProxyProductManagement implements IProductManagement {
         try{
             return controller.deleteProductsByName(name);
         } catch (Exception e){
-            logger.log(Level.SEVERE, "Das Produkt " + name + " konnte aufgrund eines Fehlers nicht in der Datenbank " +
+            logger.severe("Das Produkt " + name + " konnte aufgrund eines Fehlers nicht in der Datenbank " +
                     "gefunden werden. Das Produkt konnte nicht gelöscht werden und es wird eine leere Liste zurückgegeben... . " +
                     "\nSiehe die folgende Fehlermeldung: ", e);
             return Collections.emptyList();
@@ -235,7 +239,7 @@ public class ProxyProductManagement implements IProductManagement {
         try{
             return controller.deleteProductsByPrice(price);
         } catch (Exception e){
-            logger.log(Level.SEVERE, "Das Produkt mit dem Preis " + price + " konnte aufgrund eines Fehlers nicht in der Datenbank " +
+            logger.severe("Das Produkt mit dem Preis " + price + " konnte aufgrund eines Fehlers nicht in der Datenbank " +
                     "gefunden werden. Das Produkt konnte nicht gelöscht werden und es wird eine leere Liste zurückgegeben... . " +
                     "\nSiehe die folgende Fehlermeldung: ", e);
             return Collections.emptyList();
@@ -257,7 +261,7 @@ public class ProxyProductManagement implements IProductManagement {
         try {
             return controller.deleteAll();
         } catch (Exception e) {
-            logger.log(Level.SEVERE, "Es konnten nicht alle Produkte entfernt werden. Gebe leere Liste zurück... ." +
+            logger.severe("Es konnten nicht alle Produkte entfernt werden. Gebe leere Liste zurück... ." +
                     " \nSiehe die folgende Fehlermeldung: ", e);
             return Collections.emptyList();
         }

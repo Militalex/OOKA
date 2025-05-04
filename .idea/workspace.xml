@@ -9,8 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eec5bcc-940c-4ed5-aa61-73870d3cf9a0" name="Changes" comment="Bearbeitung für Übung 2 V02">
+    <list default="true" id="8eec5bcc-940c-4ed5-aa61-73870d3cf9a0" name="Changes" comment="Bearbeitung für Übung 2 V04">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jars/ProduktManagement Komponente.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jars/ProduktManagementKomponente-1.0-SHADED.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/RuntimeEnvironmentLibrary.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/RuntimeEnvironmentLibrary.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/ProductManagementMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/PortProductManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/PortProductManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProxyProductManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/ProxyProductManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/util/LoggerUtil.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +37,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="solution" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -50,42 +59,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JAR Application.OOKAUebungNr1-1.0-SNAPSHOT.jar.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.ConnectionTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ConnectionTest.roundTrip.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.OOKAUe1 [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.OOKAUe1 [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.OOKAUebungNr1 [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.OOKAUebungNr1 [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.OOKAUebungNr1 [package].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Dokumente/Sciebo/Dokumente/Studium/03 Master Hochschule Bonn Rhein-Sieg/1. Semester/Objektorientierte Komponenten-Architekturen/03 Übungen/.Code/ProduktManagement Client Simulation Komponente&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.33612564&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JAR Application.OOKAUebungNr1-1.0-SNAPSHOT.jar.executor": "Coverage",
+    "JUnit.ConnectionTest.executor": "Run",
+    "JUnit.ConnectionTest.roundTrip.executor": "Run",
+    "Maven.OOKAUe1 [clean].executor": "Run",
+    "Maven.OOKAUe1 [package].executor": "Run",
+    "Maven.OOKAUebungNr1 [clean].executor": "Run",
+    "Maven.OOKAUebungNr1 [compile].executor": "Run",
+    "Maven.OOKAUebungNr1 [package].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.codeium.enabled": "true",
+    "git-widget-placeholder": "uebung3",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/Sciebo/Dokumente/Studium/03 Master Hochschule Bonn Rhein-Sieg/1. Semester/Objektorientierte Komponenten-Architekturen/03 Übungen/.Code/ProduktManagement Komponente/libs/RuntimeEnvironmentLibrary.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.33612564",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;h2&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "h2"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.hbrs.ooka.uebung1" />
@@ -110,7 +119,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestMainClass">
+  <component name="RunManager" selected="JUnit.ConnectionTest (1)">
     <configuration name="TestMainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TestMainClass" />
       <module name="OOKAUebungNr1" />
@@ -127,8 +136,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConnectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OOKAUebungNr1" />
+    <configuration name="ConnectionTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProduktManagementKomponente" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hbrs.ooka.uebung1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="PACKAGE_NAME" value="org.hbrs.ooka.uebung1" />
       <option name="MAIN_CLASS_NAME" value="org.hbrs.ooka.uebung1.ConnectionTest" />
       <option name="TEST_OBJECT" value="class" />
@@ -158,6 +173,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ConnectionTest (1)" />
         <item itemvalue="JUnit.AldaConnectionTest" />
         <item itemvalue="JUnit.ConnectionTest.roundTripWithCache" />
         <item itemvalue="JUnit.ConnectionTest.roundTripWithoutCache" />
@@ -198,6 +214,9 @@
       <workItem from="1745708415445" duration="990000" />
       <workItem from="1745776422589" duration="3596000" />
       <workItem from="1745851856520" duration="3169000" />
+      <workItem from="1746284709963" duration="81000" />
+      <workItem from="1746286173052" duration="1652000" />
+      <workItem from="1746391980024" duration="3141000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -271,7 +290,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745712692278</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Bearbeitung für Übung 2 V04">
+      <option name="closed" value="true" />
+      <created>1745886992847</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1745886992847</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,7 +324,8 @@
     <MESSAGE value="Bearbeitung 14.04.2025" />
     <MESSAGE value="Bearbeitung für Übung 2" />
     <MESSAGE value="Bearbeitung für Übung 2 V02" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bearbeitung für Übung 2 V02" />
+    <MESSAGE value="Bearbeitung für Übung 2 V04" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bearbeitung für Übung 2 V04" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/OOKAUe1$.ic" NAME=" Coverage Results" MODIFIED="1743099968890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

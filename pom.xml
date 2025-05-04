@@ -6,7 +6,7 @@
 
     <groupId>org.hbrs.ooka</groupId>
     <artifactId>ProduktManagementKomponente</artifactId>
-    <version>1.0-SHADED</version>
+    <version>1.0</version>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -28,7 +28,7 @@
             <artifactId>RuntimeEnvironmentLibrary</artifactId>
             <version>1.0.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/libs/RuntimeEnvironmentLibrary.jar</systemPath>
+            <systemPath>${project.basedir}/libs/RuntimeEnvironment-LIBRARY.jar</systemPath>
         </dependency>
 
         <dependency>
@@ -46,8 +46,8 @@
     </dependencies>
 
     <properties>
-        <maven.compiler.source>19</maven.compiler.source>
-        <maven.compiler.target>19</maven.compiler.target>
+        <maven.compiler.source>20</maven.compiler.source>
+        <maven.compiler.target>20</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -60,15 +60,78 @@
     <build>
         <plugins>
             <plugin>
+                <!-- 1. SHADED (Uber-JAR) -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.2.4</version>
                 <executions>
                     <execution>
+                        <id>shaded-jar</id>
                         <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
+                        <goals><goal>shade</goal></goals>
+                        <configuration>
+                            <finalName>${project.artifactId}-SHADED</finalName>
+                            <outputDirectory>${project.basedir}/jars</outputDirectory>
+                            <filters>
+                                <filter>
+                                    <!-- Dein eigenes Projekt als "Dependency" referenzieren -->
+                                    <artifact>${project.groupId}:${project.artifactId}</artifact>
+                                    <includes>
+                                        <include>org/hbrs/ooka/uebung1/**</include>
+                                    </includes>
+                                </filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.2</version>
+                <executions>
+                    <execution>
+                        <id>library-jar</id>
+                        <phase>compile</phase>
+                        <goals><goal>jar</goal></goals>
+                        <configuration>
+                            <classifier>LIBRARY</classifier>
+                            <finalName>${project.artifactId}</finalName>
+                            <outputDirectory>${project.basedir}/jars</outputDirectory>
+                            <includes>
+                                <include>org/hbrs/ooka/uebung1/interfaces/**</include>
+                                <include>org/hbrs/ooka/uebung1/HashMapCache.class</include>
+                                <include>org/hbrs/ooka/uebung1/component/PortProductManagement.class</include>
+                            </includes>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>component-jar</id>
+                        <phase>compile</phase>
+                        <goals><goal>jar</goal></goals>
+                        <configuration>
+                            <classifier>COMPONENT</classifier>
+                            <finalName>${project.artifactId}</finalName>
+                            <outputDirectory>${project.basedir}/jars</outputDirectory>
+                            <includes>
+                                <include>org/hbrs/ooka/uebung1/**</include>
+                            </includes>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>component-simulation-jar</id>
+                        <phase>compile</phase>
+                        <goals><goal>jar</goal></goals>
+                        <configuration>
+                            <classifier>COMPONENT</classifier>
+                            <finalName>${project.artifactId}Simulation</finalName>
+                            <outputDirectory>${project.basedir}/jars</outputDirectory>
+                            <includes>
+                                <include>org/hbrs/ooka/uebung2/**</include>
+                            </includes>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
