@@ -9,22 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eec5bcc-940c-4ed5-aa61-73870d3cf9a0" name="Changes" comment="Bearbeitung 05.05.2025">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/ProductManagementStarter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung3/TickerSimulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jars/ProduktManagementKomponente-COMPONENT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jars/ProduktManagementKomponente-LIBRARY.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jars/ProduktManagementKomponente-SHADED.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jars/ProduktManagementKomponenteSimulation-COMPONENT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/RuntimeEnvironment-LIBRARY.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/RuntimeEnvironment-LIBRARY.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/PortProductManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung1/component/PortProductManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung2/ClientSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung2/ClientSimulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hbrs/ooka/uebung2/Tickable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hbrs/ooka/uebung2/RuntimeEnvironmentMockup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hbrs/ooka/uebung2/RuntimeEnvironmentMockup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/hbrs/ooka/uebung2/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/hbrs/ooka/uebung2/TestMain.java" afterDir="false" />
-    </list>
+    <list default="true" id="8eec5bcc-940c-4ed5-aa61-73870d3cf9a0" name="Changes" comment="Bearbeitung 05.05.2025 V03" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -231,7 +216,7 @@
       <workItem from="1746284709963" duration="81000" />
       <workItem from="1746286173052" duration="1652000" />
       <workItem from="1746391980024" duration="4508000" />
-      <workItem from="1746453414756" duration="8246000" />
+      <workItem from="1746453414756" duration="8337000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -321,7 +306,23 @@
       <option name="project" value="LOCAL" />
       <updated>1746396388737</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Bearbeitung 05.05.2025">
+      <option name="closed" value="true" />
+      <created>1746468945840</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1746468945840</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Bearbeitung 05.05.2025 V03">
+      <option name="closed" value="true" />
+      <created>1746469004940</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1746469004940</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +350,8 @@
     <MESSAGE value="Bearbeitung für Übung 2 V02" />
     <MESSAGE value="Bearbeitung für Übung 2 V04" />
     <MESSAGE value="Bearbeitung 05.05.2025" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bearbeitung 05.05.2025" />
+    <MESSAGE value="Bearbeitung 05.05.2025 V03" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bearbeitung 05.05.2025 V03" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/OOKAUe1$.ic" NAME=" Coverage Results" MODIFIED="1743099968890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

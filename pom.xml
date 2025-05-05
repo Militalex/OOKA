@@ -53,14 +53,13 @@
 
     <!-- Build configuration. Hier sollte noch ein Plugin für
      das Packaging hinzugefügt werden. Das Standard-Plugin von Maven
-     fügt leider kein Abhängigkeiten hinzu. Bitte gerne nach Alternativen suchen.
+     fügt leider keine Abhängigkeiten hinzu. Bitte gerne nach Alternativen suchen.
      ChatGPT liefert hier gute Beispiele (denkbares Prompt: How can I include a jar-File
      into a jar file when using maven? :-)-->
 
     <build>
         <plugins>
             <plugin>
-                <!-- 1. SHADED (Uber-JAR) -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.2.4</version>
