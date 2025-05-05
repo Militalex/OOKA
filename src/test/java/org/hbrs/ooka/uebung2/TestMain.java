@@ -6,8 +6,6 @@ public class TestMain {
     public static void main(String[] args) throws InterruptedException {
         ProductManagementStarter.start();
 
-        ClientSimulation.runtimeEnvironmentAPI = new RuntimeEnvironmentMockup();
-
         ClientSimulation.start();
         Thread.sleep(10000);
         ClientSimulation.stop();
