@@ -1,16 +1,17 @@
 package org.hbrs.ooka.uebung2;
 
-import org.hbrs.ooka.uebung1.component.PortProductManagement;
+import org.hbrs.ooka.uebung1.ProductManagementStarter;
 
 public class TestMain {
     public static void main(String[] args) throws InterruptedException {
-        PortProductManagement.start();
+        ProductManagementStarter.start();
 
-        ClientSimulation simulation = new ClientSimulation();
-        simulation.start();
+        ClientSimulation.runtimeEnvironmentAPI = new RuntimeEnvironmentMockup();
+
+        ClientSimulation.start();
         Thread.sleep(10000);
-        simulation.stop();
+        ClientSimulation.stop();
 
-        PortProductManagement.stop();
+        ProductManagementStarter.stop();
     }
 }

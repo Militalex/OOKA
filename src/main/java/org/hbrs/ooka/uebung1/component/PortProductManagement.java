@@ -1,13 +1,8 @@
 package org.hbrs.ooka.uebung1.component;
 
-import org.hbrs.ooka.uebung1.HashMapCache;
 import org.hbrs.ooka.uebung1.interfaces.ICaching;
 import org.hbrs.ooka.uebung1.interfaces.IProductManagement;
 import org.hbrs.ooka.uebung2_3.annotations.Port;
-import org.hbrs.ooka.uebung2_3.annotations.Start;
-import org.hbrs.ooka.uebung2_3.annotations.Stop;
-import org.hbrs.ooka.uebung2_3.annotations.Inject;
-import org.hbrs.ooka.uebung2_3.annotations.InjectType;
 import org.hbrs.ooka.uebung2_3.services.logger.ILogger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -16,18 +11,12 @@ import java.util.List;
 
 @Port
 public class PortProductManagement {
-    @Inject(InjectType.LOGGER)
     private static ILogger logger;
     private static @Nullable ICaching<List<Product>> cache;
-    @Start
-    public static void start(){
-        PortProductManagement.setCache(new HashMapCache<>());
+    public static void setLogger(ILogger logger) {
+        PortProductManagement.logger = logger;
     }
-    @Stop
-    public static void stop(){
-
-    }
-    static ILogger getLogger() {
+    public static ILogger getLogger() {
         return logger;
     }
     public static boolean isCacheEmpty(){

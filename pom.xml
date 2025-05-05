@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.hbrs.ooka</groupId>
-    <artifactId>ProduktManagementKomponente</artifactId>
+    <artifactId>ProduktManagement</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
@@ -128,8 +128,22 @@
                             <classifier>COMPONENT</classifier>
                             <finalName>${project.artifactId}Simulation</finalName>
                             <outputDirectory>${project.basedir}/jars</outputDirectory>
+                            <excludes>
+                                <exclude>org/hbrs/ooka/uebung3/**</exclude>
+                            </excludes>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>ticker-component-simulation-jar</id>
+                        <phase>compile</phase>
+                        <goals><goal>jar</goal></goals>
+                        <configuration>
+                            <classifier>COMPONENT</classifier>
+                            <finalName>TickerSimulation</finalName>
+                            <outputDirectory>${project.basedir}/jars</outputDirectory>
                             <includes>
-                                <include>org/hbrs/ooka/uebung2/**</include>
+                                <include>org/hbrs/ooka/uebung3/**</include>
                             </includes>
                         </configuration>
                     </execution>
